@@ -1,0 +1,47 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-5 left-column">
+      <div class="content center-verticaly">
+        <h3 class="text-warning">Enter your control panel</h3>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="name" class="text-warning">Full name (with underscore)</label>
+            <input class="form-control"
+                   type="text"
+                   id="name"
+                   placeholder="Enter your name"
+                   formControlName="name"
+                   name="name"
+                   [ngClass]="{ error: (!loginForm.controls['name'].valid && loginForm.controls['name'].touched) }"/>
+          </div>
+
+          <div class="form-group">
+            <label for="password" class="text-warning">Password</label>
+            <input class="form-control"
+                   type="password"
+                   id="password"
+                   placeholder="Enter your password"
+                   formControlName="password"
+                   name="password"
+                   [ngClass]="{ error: (!loginForm.controls['password'].valid && loginForm.controls['password'].touched) }"/>
+          </div>
+
+          <div class="form-group">
+            <button type="submit"
+                    class="btn btn-warning btn-block"
+                    [disabled]="!this.loginForm.valid">Login</button>
+          </div>
+
+          <span class="error"
+                [ngStyle]="{ opacity: ((!loginForm.controls['name'].valid && loginForm.controls['name'].touched) || (!loginForm.controls['password'].valid && loginForm.controls['password'].touched)) ? 1 : 0 }">* field required!</span>
+          <br />
+          <span class="error"
+                *ngIf="errorMessage.length > 0">{{ errorMessage }}</span>
+        </form>
+      </div>
+    </div>
+    <div class="col-sm-7 right-column justify-content-center align-items-center text-center">
+      <img src="../../../assets/gta-sa-logo.png" alt="logo">
+    </div>
+  </div>
+</div>
