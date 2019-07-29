@@ -1,0 +1,25 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="content">
+
+        <h2>List of your in-game houses</h2>
+
+        <table *ngIf="houses && houses.length > 0" class="table table-dark table-striped table-hover">
+          <tr class="table-header">
+            <td>#</td>
+            <td>ID</td>
+            <td>Price</td>
+            <td>Locked</td>
+          </tr>
+          <tr *ngFor="let house of houses; let i = index;">
+            <td>{{ i }}</td>
+            <td><a routerLink="{{house.id}}">{{ house.id }}</a></td>
+            <td>{{ house.price }}</td>
+            <td>{{ house.locked }}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
