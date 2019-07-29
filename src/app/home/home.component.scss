@@ -32,18 +32,15 @@
     top: 35%;
     transform: translateY(-35%);
     font-family: 'pricedown';
+    padding-left: 10px;
 
     :not(:hover) {
       color: white;
-      border-top: 2px solid white;
-      border-bottom: 2px solid white;
       border-radius: 3px;
     }
 
     :hover {
       color: orange;
-      border-top: 2px solid orange;
-      border-bottom: 2px solid orange;
       border-radius: 5px;
     }
   }
@@ -53,6 +50,7 @@
 .content {
   width: calc(100vw - 300px);
   height: calc(100vh - 60px);
+  overflow-y: auto;
   background-color: orange;
   float: left;
 }

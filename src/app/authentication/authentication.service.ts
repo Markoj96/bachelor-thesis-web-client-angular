@@ -9,9 +9,9 @@ import {StorageService} from '../shared/services/storage.service';
 })
 export class AuthenticationService {
 
-  baseURL = environment.baseURL;
-  loginURL = `${this.baseURL}/users/authenticate`;
-  registerURL = `${this.baseURL}/users/`;
+  private baseURL = environment.baseURL;
+  private loginURL = `${this.baseURL}/users/authenticate`;
+  private registerURL = `${this.baseURL}/users/`;
 
   constructor(private http: HttpClient, private router: Router, private storageService: StorageService) { }
 

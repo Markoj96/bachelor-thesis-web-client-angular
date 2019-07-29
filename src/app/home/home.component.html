@@ -10,22 +10,26 @@
   </div>
 
   <div class="menu-item">
-    <a href=""><h3>houses</h3></a>
+    <a href=""[routerLink]="['/home/houses']"><h3>houses</h3></a>
   </div>
 
   <div class="menu-item">
-    <a href=""><h3>vehicles</h3></a>
+    <a href="" [routerLink]="['/home/vehicles']"><h3>vehicles</h3></a>
   </div>
 
   <div class="menu-item">
-    <a href=""><h3>business</h3></a>
+    <a href="" [routerLink]="['/home/businesses']"><h3>business</h3></a>
   </div>
 
   <div class="menu-item">
-    <a href=""><h3>statistics</h3></a>
+    <a href="" [routerLink]="['/home/special-businesses']"><h3>special businesses</h3></a>
   </div>
+
+<!--  <div class="menu-item">-->
+<!--    <a href=""><h3>statistics</h3></a>-->
+<!--  </div>-->
 </div>
 
 <div class="content">
-
+  <router-outlet></router-outlet>
 </div>
