@@ -1,0 +1,25 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="content">
+
+        <h2>List of your in-game vehicles</h2>
+
+        <table *ngIf="vehicles && vehicles.length > 0" class="table table-dark table-striped table-hover">
+          <tr class="table-header">
+            <td>#</td>
+            <td>ID</td>
+            <td>Model</td>
+            <td>Locked</td>
+          </tr>
+          <tr *ngFor="let vehicle of vehicles; let i = index;">
+            <td>{{ i }}</td>
+            <td><a routerLink="{{vehicle.id}}">{{ vehicle.id }}</a></td>
+            <td>{{ vehicle.model }}</td>
+            <td>{{ vehicle.locked }}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

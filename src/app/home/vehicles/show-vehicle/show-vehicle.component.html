@@ -1,0 +1,112 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="content">
+        <h3 *ngIf="vehicle != null">information about your vehicle </h3>
+
+        <table *ngIf="vehicle != null" class="table table-dark table-striped table-bordered table-hover">
+          <tr>
+            <td class="table-header">ID</td>
+            <td>{{ vehicle.id }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Model</td>
+            <td>{{ vehicle.model }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Park X</td>
+            <td>{{ vehicle.parkX }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Park Y</td>
+            <td>{{ vehicle.parkY }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Park Z</td>
+            <td>{{ vehicle.parkZ }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Color 1</td>
+            <td>{{ vehicle.color1 }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Color 2</td>
+            <td>{{ vehicle.color2 }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Paintjob</td>
+            <td>{{ vehicle.paintjob }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Locked</td>
+            <td>{{ vehicle.locked }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Registration</td>
+            <td>{{ vehicle.registration }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Spoiler</td>
+            <td>{{ vehicle.spoiler }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Hood</td>
+            <td>{{ vehicle.hood }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Roof</td>
+            <td>{{ vehicle.roof }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Side skirt</td>
+            <td>{{ vehicle.side_skirt }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Lamps</td>
+            <td>{{ vehicle.lamps }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Nitro</td>
+            <td>{{ vehicle.nitro }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Exhaust</td>
+            <td>{{ vehicle.exhaust }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Wheels</td>
+            <td>{{ vehicle.wheels }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Stereo</td>
+            <td>{{ vehicle.stereo }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Hydraulics</td>
+            <td>{{ vehicle.hydraulics }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Front bumper</td>
+            <td>{{ vehicle.front_bumper }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Rear bumper</td>
+            <td>{{ vehicle.rear_bumper }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Vent right</td>
+            <td>{{ vehicle.vent_right }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Vent left</td>
+            <td>{{ vehicle.vent_left }}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+<!--    <div class="col-sm-6">-->
+<!--      &lt;!&ndash; map here &ndash;&gt;-->
+<!--    </div>-->
+  </div>
+</div>
