@@ -1,0 +1,56 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="content">
+        <h3 *ngIf="specialBusiness != null">information about your special business {{ specialBusiness.name }}</h3>
+
+        <table *ngIf="specialBusiness != null" class="table table-dark table-striped table-bordered table-hover">
+          <tr>
+            <td class="table-header">ID</td>
+            <td>{{ specialBusiness.id }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Name</td>
+            <td>{{ specialBusiness.name }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Description</td>
+            <td>{{ specialBusiness.description }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Price</td>
+            <td>{{ specialBusiness.price }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Money</td>
+            <td>{{ specialBusiness.money }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Money</td>
+            <td>{{ specialBusiness.money }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Enter fee</td>
+            <td>{{ specialBusiness.enter_fee }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Enter X</td>
+            <td>{{ specialBusiness.enterX }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Enter Y</td>
+            <td>{{ specialBusiness.enterY }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Enter Z</td>
+            <td>{{ specialBusiness.enterZ }}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <!-- map here -->
+    </div>
+  </div>
+</div>

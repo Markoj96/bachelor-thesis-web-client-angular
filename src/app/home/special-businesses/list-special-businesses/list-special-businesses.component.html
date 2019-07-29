@@ -1,0 +1,29 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="content">
+
+        <h2>List of your in-game special businesses</h2>
+
+        <table *ngIf="specialBusinesses && specialBusinesses.length > 0" class="table table-dark table-striped table-hover">
+          <tr class="table-header">
+            <td>#</td>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Description</td>
+            <td>Money</td>
+            <td>Enter fee</td>
+          </tr>
+          <tr *ngFor="let specialBusiness of specialBusinesses; let i = index;">
+            <td>{{ i }}</td>
+            <td><a routerLink="{{specialBusiness.id}}">{{ specialBusiness.id }}</a></td>
+            <td>{{ specialBusiness.name }}</td>
+            <td>{{ specialBusiness.description }}</td>
+            <td>{{ specialBusiness.money }}</td>
+            <td>{{ specialBusiness.enter_fee }}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
