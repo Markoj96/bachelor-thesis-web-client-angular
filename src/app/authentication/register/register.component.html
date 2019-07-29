@@ -1,0 +1,111 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-5 left-column">
+      <div class="content center-verticaly">
+        <h3 class="text-warning">Join our community</h3>
+        <span class="text-white info">Fill in-game information</span>
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="name" class="text-warning">Full name (with underscore)</label>
+            <input class="form-control"
+                   type="text"
+                   id="name"
+                   placeholder="Enter your name"
+                   formControlName="name"
+                   name="name"
+                   [ngClass]="{ error: (!registerForm.controls['name'].valid && registerForm.controls['name'].touched) }"/>
+          </div>
+
+          <div class="form-group">
+            <label for="password" class="text-warning">Password</label>
+            <input class="form-control"
+                   type="password"
+                   id="password"
+                   placeholder="Enter your password"
+                   formControlName="password"
+                   name="password"
+                   [ngClass]="{ error: (!registerForm.controls['password'].valid && registerForm.controls['password'].touched) }"/>
+          </div>
+
+          <div class="form-group">
+            <label for="gender" class="text-warning">Gender</label>
+            <select class="form-control"
+                   id="gender"
+                   placeholder="Choose your gender"
+                   formControlName="gender"
+                   name="gender"
+                   [ngClass]="{ error: (!registerForm.controls['gender'].valid && registerForm.controls['gender'].touched) }">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="city" class="text-warning">City</label>
+            <select class="form-control"
+                    id="city"
+                    placeholder="Choose your city"
+                    formControlName="city"
+                    name="city"
+                    [ngClass]="{ error: (!registerForm.controls['city'].valid && registerForm.controls['city'].touched) }">
+              <option value="los_santos">Los Santos</option>
+              <option value="las_venturas">Las Venturas</option>
+              <option value="san_fierro">San Fierro</option>
+            </select>
+          </div>
+
+          <hr />
+          <span class="text-white info">Fill real life information</span>
+
+          <div class="form-group">
+            <label for="age" class="text-warning">Age</label>
+            <input class="form-control"
+                   type="number"
+                   id="age"
+                   placeholder="Enter your age"
+                   formControlName="age"
+                   name="age"
+                   [ngClass]="{ error: (!registerForm.controls['age'].valid && registerForm.controls['age'].touched) }"/>
+          </div>
+
+          <div class="form-group">
+            <label for="country" class="text-warning">Country</label>
+            <select class="form-control"
+                    id="country"
+                    placeholder="Choose your country"
+                    formControlName="country"
+                    name="country"
+                    [ngClass]="{ error: (!registerForm.controls['country'].valid && registerForm.controls['country'].touched) }">
+              <option value="serbia">Serbia</option>
+              <option value="montenegro">Montenegro</option>
+              <option value="bosnia_and_herzegovina">Bosnia and Herzegovina</option>
+              <option value="macedonia">Macedonia</option>
+              <option value="croatia">Croatia</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <button type="submit"
+                    class="btn btn-warning btn-block"
+                    [disabled]="!this.registerForm.valid">Register</button>
+          </div>
+
+          <span class="text-danger"
+                [ngStyle]="{ opacity: ((!registerForm.controls['name'].valid && registerForm.controls['name'].touched)
+                                      || (!registerForm.controls['password'].valid && registerForm.controls['password'].touched)
+                                      || (!registerForm.controls['gender'].valid && registerForm.controls['gender'].touched)
+                                      || (!registerForm.controls['city'].valid && registerForm.controls['city'].touched)
+                                      || (!registerForm.controls['age'].valid && registerForm.controls['age'].touched)
+                                      || (!registerForm.controls['country'].valid && registerForm.controls['country'].touched)) ? 1 : 0 }">* field required!</span>
+          <br />
+          <span class="error"
+                *ngIf="errorMessage.length > 0">{{ errorMessage }}</span>
+        </form>
+      </div>
+    </div>
+    <div class="col-sm-7 right-column justify-content-center align-items-center text-center">
+      <img src="../../../assets/gta-sa-logo.png" alt="logo">
+    </div>
+  </div>
+</div>
