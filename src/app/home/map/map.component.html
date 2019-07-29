@@ -1,0 +1,75 @@
+<!-- The container the map is rendered in -->
+<div id="map-canvas"></div>
+
+<!-- Load all javascript -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAchIBhV9jrOPInP3Jl_idfeo2HEKddjT4"></script>
+<script src="../../../assets/SanMap.min.js"></script>
+<script>
+
+  let mapType = new SanMapType(0, 2, function (zoom, x, y) {
+    return x == -1 && y == -1
+      ? "../../../assets/tiles/blank.png"
+      : "../../../assets/tiles/blank." + zoom + "." + x + "." + y + ".png";//Where the tiles are located
+  });
+
+  let satType = new SanMapType(0, 3, function (zoom, x, y) {
+    return x == -1 && y == -1
+      ? null
+      : "../../../assets/tiles/satellite." + zoom + "." + x + "." + y + ".png";//Where the tiles are located
+  });
+
+  let map = SanMap.createMap(document.getElementById('map-canvas'),
+    {'Map': mapType, 'Satellite': satType}, 1, null, false, 'Satellite');
+
+  let bankInfoWindow = new google.maps.InfoWindow({
+    content: '<h3>LS Bank</h3><p><b>At this bank</b>, your money is welcome.</p>'
+  });
+
+  let bankMarker = new google.maps.Marker({
+    position: SanMap.getLatLngFromPos(1500, -1590),
+    map: map
+  });
+
+  google.maps.event.addListener(bankMarker, 'click', function() {
+    map.setCenter(bankMarker.position);
+    bankInfoWindow.open(map,bankMarker);
+  });
+
+
+  /* Create a basic marker near Blueberry Acres.
+     * When you click on this marker, an info window is shown.
+     */
+  let bbInfoWindow = new google.maps.InfoWindow({
+    content: '<h3>Blueberry</h3><p><b>This place</b>, is the center of the world!</p>'
+  });
+  let bbMarker = new google.maps.Marker({
+    position: SanMap.getLatLngFromPos(0, 0),
+    map: map
+  });
+  google.maps.event.addListener(bbMarker, 'click', function() {
+    map.setCenter(bbMarker.position);
+    bbInfoWindow.open(map,bbMarker);
+  });
+
+  /* Create a basic marker near Idlewood. The marker has a custom icon.
+     * When you click on this marker, an info window is shown.
+     */
+  let homeInfoWindow = new google.maps.InfoWindow({
+    content: '<h3>I live here</h3><p><b>Home</b>, sweet home!</p>'
+  });
+
+  // let homeMarker = new google.maps.Marker({
+  //   position: SanMap.getLatLngFromPos(2050, -1700),
+  //   map: map,
+  //   icon: 'http://ikkentim.com/sanmap/green-house.gif'
+  // });
+  // google.maps.event.addListener(homeMarker, 'click', function() {
+  //   map.setCenter(homeMarker.position);
+  //   homeInfoWindow.open(map,homeMarker);
+  // });
+
+  google.maps.event.addListener(map, 'click', function(event) {
+    let pos = SanMap.getPosFromLatLng(event.latLng);
+    alert(pos.x + "," + pos.y);
+  });
+</script>
