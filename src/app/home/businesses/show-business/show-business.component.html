@@ -49,8 +49,9 @@
       </div>
     </div>
 
-    <div class="col-sm-6">
-      <!-- map here -->
+    <div *ngIf="business != null" class="col-sm-6 content">
+      <h3>business location</h3>
+      <iframe class="map" [src]="businessMapURL"></iframe>
     </div>
   </div>
 </div>

@@ -1,3 +1,73 @@
-<p>
-  show-house works!
-</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="content">
+        <h3 *ngIf="house != null">information about your house {{ house.name }}</h3>
+
+        <table *ngIf="house != null" class="table table-dark table-striped table-bordered table-hover">
+          <tr>
+            <td class="table-header">ID</td>
+            <td>{{ house.id }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Price</td>
+            <td>{{ house.price }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Locked</td>
+            <td>{{ house.locked }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Enter X</td>
+            <td>{{ house.enterX }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Enter Y</td>
+            <td>{{ house.enterY }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Enter Z</td>
+            <td>{{ house.enterZ }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Materials</td>
+            <td>{{ house.materials }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Drugs</td>
+            <td>{{ house.drugs }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Slot 1</td>
+            <td>{{ house.slot1 }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Slot 1 ammo</td>
+            <td>{{ house.slot1_ammo }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Slot 2</td>
+            <td>{{ house.slot2 }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Slot 2 ammo</td>
+            <td>{{ house.slot2_ammo }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Slot 3</td>
+            <td>{{ house.slot3 }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Slot 3 ammo</td>
+            <td>{{ house.slot3_ammo }}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div  *ngIf="house != null" class="col-sm-6 content">
+      <h3>Vehicle location</h3>
+      <iframe class="map" [src]="houseMapURL"></iframe>
+    </div>
+  </div>
+</div>

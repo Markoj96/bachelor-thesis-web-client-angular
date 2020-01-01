@@ -36,6 +36,7 @@ export class LoginComponent implements OnInit {
       .subscribe(
         response => {
           this.storageService.saveToken(response['authorization'].token);
+          this.storageService.saveUser(response['id']);
           this.router.navigate(['/home']);
           console.log(response);
         },

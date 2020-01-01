@@ -6,12 +6,17 @@
 
         <table *ngIf="vehicle != null" class="table table-dark table-striped table-bordered table-hover">
           <tr>
+            <td colspan="2">
+              <img src="{{imgURL}}" alt="">
+            </td>
+          </tr>
+          <tr>
             <td class="table-header">ID</td>
             <td>{{ vehicle.id }}</td>
           </tr>
           <tr>
             <td class="table-header">Model</td>
-            <td>{{ vehicle.model }}</td>
+            <td>{{ getVehicleName(vehicle.model) }}</td>
           </tr>
           <tr>
             <td class="table-header">Park X</td>
@@ -105,8 +110,9 @@
       </div>
     </div>
 
-<!--    <div class="col-sm-6">-->
-<!--      &lt;!&ndash; map here &ndash;&gt;-->
-<!--    </div>-->
+    <div *ngIf="vehicle != null" class="col-sm-6 content">
+      <h3>Vehicle location</h3>
+      <iframe class="map" [src]="vehicleMapURL"></iframe>
+    </div>
   </div>
 </div>

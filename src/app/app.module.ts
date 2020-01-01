@@ -19,6 +19,7 @@ import { ListSpecialBusinessesComponent } from './home/special-businesses/list-s
 import { ShowVehicleComponent } from './home/vehicles/show-vehicle/show-vehicle.component';
 import { ListVehiclesComponent } from './home/vehicles/list-vehicles/list-vehicles.component';
 import { MapComponent } from './home/map/map.component';
+import { ShowProfileComponent } from './home/profiles/show-profile/show-profile.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { MapComponent } from './home/map/map.component';
     ListSpecialBusinessesComponent,
     ShowVehicleComponent,
     ListVehiclesComponent,
-    MapComponent
+    MapComponent,
+    ShowProfileComponent
   ],
   imports: [
     BrowserModule,

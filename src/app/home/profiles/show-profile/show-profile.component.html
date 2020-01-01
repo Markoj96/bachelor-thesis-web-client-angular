@@ -1,0 +1,216 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="content">
+        <h3 *ngIf="profile != null">Information about you, {{ profile.name }} </h3>
+
+        <table *ngIf="profile != null" class="table table-dark table-striped table-bordered table-hover">
+          <tr>
+            <td class="table-header">ID</td>
+            <td>{{ profile.id }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Full name</td>
+            <td>{{ profile.name }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Gender</td>
+            <td>{{ profile.gender }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Age</td>
+            <td>{{ profile.age }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Country</td>
+            <td>{{ profile.country }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">City</td>
+            <td>{{ profile.city }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Money</td>
+            <td>{{ profile.money }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Skin</td>
+            <td>{{ profile.skin }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Banned</td>
+            <td>{{ profile.banned }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Banned time</td>
+            <td>{{ profile.banned_time }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Identity</td>
+            <td>{{ profile.identity_card }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">SpawnX</td>
+            <td>{{ profile.spawnX | number }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">SpawnY</td>
+            <td>{{ profile.spawnY | number }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">SpawnZ</td>
+            <td>{{ profile.spawnZ | number }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Bank account</td>
+            <td>{{ profile.bank_account }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Bank money</td>
+            <td>{{ profile.bank_money }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Bank credit</td>
+            <td>{{ profile.bank_credit }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Driving licence</td>
+            <td>{{ profile.driving_licence }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Flying licence</td>
+            <td>{{ profile.flying_licence }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Sailing licence</td>
+            <td>{{ profile.sailing_licence }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Admin</td>
+            <td>{{ profile.admin }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Donator</td>
+            <td>{{ profile.donator }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Donator points</td>
+            <td>{{ profile.donator_points }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Level</td>
+            <td>{{ profile.level }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Rsepect</td>
+            <td>{{ profile.respect }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Hours</td>
+            <td>{{ profile.hours }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Play time</td>
+            <td>{{ profile.play_time }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Play time</td>
+            <td>{{ profile.play_time }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Paycheck</td>
+            <td>{{ profile.paycheck }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Kills</td>
+            <td>{{ profile.kills }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Deaths</td>
+            <td>{{ profile.deaths }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Job</td>
+            <td>{{ profile.job}}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Job contract</td>
+            <td>{{ profile.job_contract }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Mobile</td>
+            <td>{{ profile.mobile }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Mobile number</td>
+            <td>{{ profile.mobile_number }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Mobile credit</td>
+            <td>{{ profile.mobile_credit }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Address book</td>
+            <td>{{ profile.address_book }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Drugs</td>
+            <td>{{ profile.drugs }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Materials</td>
+            <td>{{ profile.materials }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Pistol skill</td>
+            <td>{{ profile.pistol_skill }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Silenced skill</td>
+            <td>{{ profile.silenced_skill }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Desert skill</td>
+            <td>{{ profile.desert_skill }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Shotgun skill</td>
+            <td>{{ profile.shotgun_skill }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Sawnoff skill</td>
+            <td>{{ profile.sawnoff_skill }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Combat skill</td>
+            <td>{{ profile.combat_skill }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Uzi skill</td>
+            <td>{{ profile.uzi_skill }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">MP5 skill</td>
+            <td>{{ profile.mp5_skill }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">AK47 skill</td>
+            <td>{{ profile.ak47_skill}}</td>
+          </tr>
+          <tr>
+            <td class="table-header">M4 skill</td>
+            <td>{{ profile.play_time }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Sniper skill</td>
+            <td>{{ profile.sniper_skill }}</td>
+          </tr>
+          <tr>
+            <td class="table-header">Fighting style</td>
+            <td>{{ profile.fighting_style }}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

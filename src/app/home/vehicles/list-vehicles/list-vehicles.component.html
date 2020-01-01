@@ -5,7 +5,7 @@
 
         <h2>List of your in-game vehicles</h2>
 
-        <table *ngIf="vehicles && vehicles.length > 0" class="table table-dark table-striped table-hover">
+        <table *ngIf="(vehicles && vehicles.length > 0); else noContent" class="table table-dark table-striped table-hover">
           <tr class="table-header">
             <td>#</td>
             <td>ID</td>
@@ -15,10 +15,13 @@
           <tr *ngFor="let vehicle of vehicles; let i = index;">
             <td>{{ i }}</td>
             <td><a routerLink="{{vehicle.id}}">{{ vehicle.id }}</a></td>
-            <td>{{ vehicle.model }}</td>
+            <td>{{ getVehicleName(vehicle.model) }}</td>
             <td>{{ vehicle.locked }}</td>
           </tr>
         </table>
+        <ng-template #noContent>
+          <span>You do not have any vehicle in-game</span>
+        </ng-template>
       </div>
     </div>
   </div>

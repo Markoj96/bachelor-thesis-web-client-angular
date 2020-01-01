@@ -22,19 +22,16 @@ export class ShowSpecialBusinessComponent implements OnInit {
       },
       error => {
         console.log(error);
-      }
-    );
+      });
   }
 
   public getSpecialBusiness(id) {
-    this.specialBusinessesService.getSpecialBusiness(id)
-      .subscribe(
+    this.specialBusinessesService.getSpecialBusiness(id).subscribe(
         response => {
           this.specialBusiness = response;
         },
         error => {
           console.log(error);
-        }
-      );
+        });
   }
 }

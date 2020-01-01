@@ -11,8 +11,16 @@ export class StorageService {
     localStorage.setItem('marfi-roleplay-token', token);
   }
 
+  public saveUser(user) {
+    localStorage.setItem('marfi-roleplay-user', user);
+  }
+
   public getToken() {
     return localStorage.getItem('marfi-roleplay-token');
+  }
+
+  public getUser() {
+    return localStorage.getItem('marfi-roleplay-user');
   }
 
   public clearStorage() {

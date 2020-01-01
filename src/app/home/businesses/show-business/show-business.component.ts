@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {BusinessesService} from '../businesses.service';
 import {ActivatedRoute} from '@angular/router';
+import {DomSanitizer, SafeResourceUrl, SafeUrl} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-show-business',
@@ -11,8 +12,9 @@ export class ShowBusinessComponent implements OnInit {
 
   private business = null;
   private id = null;
+  private businessMapURL: SafeResourceUrl;
 
-  constructor(private businessesService: BusinessesService, private route: ActivatedRoute) { }
+  constructor(private businessesService: BusinessesService, private route: ActivatedRoute, private domSanitizer: DomSanitizer) { }
 
   ngOnInit() {
     this.route.params.subscribe(
@@ -31,6 +33,7 @@ export class ShowBusinessComponent implements OnInit {
       .subscribe(
         response => {
           this.business = response;
+          this.businessMapURL = this.domSanitizer.bypassSecurityTrustResourceUrl('http://jovanovicmarko.me/maps/business.html?x=' + this.business.enterX + '&y=' + this.business.enterY);
         },
         error => {
           console.log(error);

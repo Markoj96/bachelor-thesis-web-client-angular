@@ -12,6 +12,8 @@ import {ShowBusinessComponent} from './home/businesses/show-business/show-busine
 import {ListSpecialBusinessesComponent} from './home/special-businesses/list-special-businesses/list-special-businesses.component';
 import {ShowSpecialBusinessComponent} from './home/special-businesses/show-special-business/show-special-business.component';
 import {MapComponent} from './home/map/map.component';
+import {ShowHouseComponent} from './home/houses/show-house/show-house.component';
+import {ShowProfileComponent} from './home/profiles/show-profile/show-profile.component';
 
 const routes: Routes = [
   {
@@ -51,7 +53,7 @@ const routes: Routes = [
       },
       {
         path: 'houses/:id',
-        component: ListHousesComponent,
+        component: ShowHouseComponent,
         pathMatch: 'full'
       },
       {
@@ -78,6 +80,15 @@ const routes: Routes = [
         path: 'map',
         component: MapComponent,
         pathMatch: 'full'
+      },
+      {
+        path: 'profile',
+        component: ShowProfileComponent,
+        pathMatch: 'full'
+      },
+      {
+        path: '**',
+        component: ShowProfileComponent
       }
     ]
   },

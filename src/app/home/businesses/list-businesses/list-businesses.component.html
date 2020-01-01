@@ -5,7 +5,7 @@
 
         <h2>List of your in-game businesses</h2>
 
-        <table *ngIf="businesses && businesses.length > 0" class="table table-dark table-striped table-hover">
+        <table *ngIf="(businesses && businesses.length > 0); else noContent" class="table table-dark table-striped table-hover">
           <tr class="table-header">
             <td>#</td>
             <td>ID</td>
@@ -24,6 +24,9 @@
             <td>{{ business.locked }}</td>
           </tr>
         </table>
+        <ng-template #noContent>
+          <span>You do not have any business in-game</span>
+        </ng-template>
       </div>
     </div>
   </div>

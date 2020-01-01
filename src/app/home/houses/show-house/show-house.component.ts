@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HousesService} from '../../houses/houses.service';
 import {ActivatedRoute} from '@angular/router';
+import {DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-show-house',
@@ -11,8 +12,9 @@ export class ShowHouseComponent implements OnInit {
 
   private house = null;
   private id = null;
+  private houseMapURL: SafeResourceUrl;
 
-  constructor(private housesService: HousesService, private route: ActivatedRoute) { }
+  constructor(private housesService: HousesService, private route: ActivatedRoute, private domSanitizer: DomSanitizer) { }
 
   ngOnInit() {
     this.route.params.subscribe(
@@ -31,6 +33,7 @@ export class ShowHouseComponent implements OnInit {
       .subscribe(
         response => {
           this.house = response;
+          this.houseMapURL = this.domSanitizer.bypassSecurityTrustResourceUrl('http://jovanovicmarko.me/maps/house.html?x=' + this.house.enterX + '&y=' + this.house.enterY);
         },
         error => {
           console.log(error);

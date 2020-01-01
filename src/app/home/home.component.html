@@ -1,35 +1,45 @@
-<div class="header">
+<div class="header clearfix">
   <div class="header-item">
     <a href="" (click)="logoutUser()"><h3>logout</h3></a>
   </div>
+
+  <div class="header-item">
+    <a href="" [routerLink]="['/home/map']"><h3>map</h3></a>
+  </div>
 </div>
 
-<div class="menu">
-  <div class="menu-item">
-    <a href=""><h3>profile</h3></a>
+<div class="clearfix">
+  <div class="menu" [ngClass]="{ 'colapsed': menuColapsed }">
+    <div class="menu-item">
+      <img src="../../assets/gta-sa-logo.png" alt="">
+    </div>
+
+    <div class="menu-item">
+      <a href=""><h3>profile</h3></a>
+    </div>
+
+    <div class="menu-item">
+      <a href=""[routerLink]="['/home/houses']"><h3>houses</h3></a>
+    </div>
+
+    <div class="menu-item">
+      <a href="" [routerLink]="['/home/vehicles']"><h3>vehicles</h3></a>
+    </div>
+
+    <div class="menu-item">
+      <a href="" [routerLink]="['/home/businesses']"><h3>business</h3></a>
+    </div>
+
+    <div class="menu-item">
+      <a href="" [routerLink]="['/home/special-businesses']"><h3>special businesses</h3></a>
+    </div>
+
+    <!--  <div class="menu-item">-->
+    <!--    <a href=""><h3>statistics</h3></a>-->
+    <!--  </div>-->
   </div>
 
-  <div class="menu-item">
-    <a href=""[routerLink]="['/home/houses']"><h3>houses</h3></a>
+  <div class="main-content">
+    <router-outlet></router-outlet>
   </div>
-
-  <div class="menu-item">
-    <a href="" [routerLink]="['/home/vehicles']"><h3>vehicles</h3></a>
-  </div>
-
-  <div class="menu-item">
-    <a href="" [routerLink]="['/home/businesses']"><h3>business</h3></a>
-  </div>
-
-  <div class="menu-item">
-    <a href="" [routerLink]="['/home/special-businesses']"><h3>special businesses</h3></a>
-  </div>
-
-<!--  <div class="menu-item">-->
-<!--    <a href=""><h3>statistics</h3></a>-->
-<!--  </div>-->
-</div>
-
-<div class="content">
-  <router-outlet></router-outlet>
 </div>

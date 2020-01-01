@@ -5,7 +5,7 @@
 
         <h2>List of your in-game houses</h2>
 
-        <table *ngIf="houses && houses.length > 0" class="table table-dark table-striped table-hover">
+        <table *ngIf="(houses && houses.length > 0); else noContent" class="table table-dark table-striped table-hover">
           <tr class="table-header">
             <td>#</td>
             <td>ID</td>
@@ -19,6 +19,9 @@
             <td>{{ house.locked }}</td>
           </tr>
         </table>
+        <ng-template #noContent>
+          <span>You do not have any house in-game</span>
+        </ng-template>
       </div>
     </div>
   </div>

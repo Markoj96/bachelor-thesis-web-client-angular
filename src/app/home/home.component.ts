@@ -8,6 +8,8 @@ import {AuthenticationService} from '../authentication/authentication.service';
 })
 export class HomeComponent implements OnInit {
 
+  menuColapsed = false;
+
   constructor(private authenticationService: AuthenticationService) { }
 
   ngOnInit() {
